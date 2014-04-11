@@ -1,8 +1,7 @@
 {
   "name": "awsqueue",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "mazon sqs simple manager library",
-  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
