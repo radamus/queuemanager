@@ -1,0 +1,15 @@
+{
+  "name": "awsqueue",
+  "version": "0.0.1",
+  "description": "mazon sqs simple manager library",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Radek Adamus <adamusr@gmail.com> (https://github.com/radamus/)",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.0.0-rc13",
+    "sinon": "^1.9.1"
+  }
+}
