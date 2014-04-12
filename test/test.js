@@ -80,4 +80,19 @@ describe("queuemanager",function(){
 			})
 		});
 
+		describe("receiveMessage",function(){
+			it("should call a sqs.deleteMessage on success", function(){			
+				var receiveMessageData = {
+					Messages:[{
+						messageBody: "sampleMessageId", MD5OfBody:"sampleMD5", receipeHandle: "sampleHandle"
+					}]
+				}
+				sqsstub.deleteMessage = sinon.mock().once();
+
+				queue.receiveMessage(function(err, data) {
+					assert.equal(data, receiveMessageData.Messages[0], JSON.stringify(data) + " : " + JSON.stringify(receiveMessageData));
+				});
+			})
+		});
+
 });
