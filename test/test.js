@@ -81,17 +81,25 @@ describe("queuemanager",function(){
 		});
 
 		describe("receiveMessage",function(){
-			it("should call a sqs.deleteMessage on success", function(){			
+			it("should call a sqs.deleteMessage once on success", function(){			
 				var receiveMessageData = {
 					Messages:[{
 						messageBody: "sampleMessageId", MD5OfBody:"sampleMD5", receipeHandle: "sampleHandle"
 					}]
 				}
 				sqsstub.deleteMessage = sinon.mock().once();
+				sqsstub.receiveMessages = sinon.mock().callsArgWith(1, null, receiveMessageData);
 
-				queue.receiveMessage(function(err, data) {
-					assert.equal(data, receiveMessageData.Messages[0], JSON.stringify(data) + " : " + JSON.stringify(receiveMessageData));
-				});
+				queue.receiveMessage(function() {});
+			})
+		});
+		describe("receiveMessage",function(){
+			it("should not call a sqs.deleteMessage on error", function(){			
+				
+				sqsstub.deleteMessage = sinon.mock().never();
+				sqsstub.receiveMessages = sinon.mock().callsArgWith(1, "error");
+
+				queue.receiveMessage(function() {});
 			})
 		});
 
