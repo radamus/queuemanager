@@ -6,8 +6,9 @@ module.exports = function(){
 	AWS.S3 = function(){};
 
 var SQSObject = {}
-	SQSObject.getMessages = sinon.mock().callsArg(1);
-	SQSObject.putMessage = sinon.mock().callsArg(1);
+	SQSObject.receiveMessages = function(){};
+	SQSObject.sendMessage = function(){};
+	SQSObject.deleteMessage = function(){};
 
 	sinon.stub(AWS, "SQS").returns(SQSObject);
 	

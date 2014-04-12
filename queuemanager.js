@@ -5,7 +5,6 @@ var SQS = function(sqs, QueueUrl){
 }
 
 SQS.prototype.sendMessage = function(message, callback) {
-    console.log("sending message: " + message);
   this.sqs.sendMessage(
         {
           MessageBody: message,
@@ -25,7 +24,7 @@ var onMessageSendConfirmed = function(callback) {
 
 
 SQS.prototype.receiveMessages = function(maxMessages, callback){
-  	this.sqs.receiveMessage(
+  	this.sqs.receiveMessages(
       {
         "QueueUrl": this.QueueUrl,
         "MaxNumberOfMessages": maxMessages,
@@ -36,14 +35,14 @@ SQS.prototype.receiveMessages = function(maxMessages, callback){
     );
 }
 
-SQS.prototype.receiveMessage = function(callback){
+SQS.prototype.receiveMessage = function(callback){  
     this.receiveMessages(1, 
-      function(err, data) {
+      function(err, messages) {
         if(err) {
           callback(err);
           return;
         }else {
-          var singleMessage = data[0];
+          var singleMessage = messages[0];
           callback(null, singleMessage);
         }
       });
