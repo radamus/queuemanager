@@ -51,7 +51,7 @@ SQS.prototype.receiveMessage = function(callback){
 
 var onMessageRecievied = function(sqsObj, callback) {
   return function(err, data){
-    if(err) {console.log(err); callback(err); return;}
+    if(err) { callback(err); return;}
       
       sqsObj.sqs.deleteMessage({
                 "QueueUrl" : sqsObj.QueueUrl,
