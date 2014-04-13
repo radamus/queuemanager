@@ -1,5 +1,5 @@
 {
-  "name": "awsqueue",
+  "name": "queuemanager",
   "version": "0.2.0",
   "description": "mazon sqs simple manager library",
   "scripts": {
