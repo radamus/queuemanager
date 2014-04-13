@@ -1,6 +1,6 @@
 {
   "name": "queuemanager",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "amazon sqs simple manager library",
   "main":"queuemanager.js",
   "scripts": {
