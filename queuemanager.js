@@ -24,7 +24,7 @@ var onMessageSendConfirmed = function(callback) {
 
 
 SQS.prototype.receiveMessages = function(maxMessages, callback){
-  	this.sqs.receiveMessages(
+  	this.sqs.receiveMessage(
       {
         "QueueUrl": this.QueueUrl,
         "MaxNumberOfMessages": maxMessages,

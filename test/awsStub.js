@@ -6,7 +6,7 @@ module.exports = function(){
 	AWS.S3 = function(){};
 
 var SQSObject = {}
-	SQSObject.receiveMessages = function(){};
+	SQSObject.receiveMessage = function(){};
 	SQSObject.sendMessage = function(){};
 	SQSObject.deleteMessage = function(){};
 
