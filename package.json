@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "description": "mazon sqs simple manager library",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "Radek Adamus <adamusr@gmail.com> (https://github.com/radamus/)",
   "license": "MIT",
