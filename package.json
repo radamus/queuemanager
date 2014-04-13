@@ -1,7 +1,8 @@
 {
   "name": "queuemanager",
-  "version": "0.2.2",
-  "description": "mazon sqs simple manager library",
+  "version": "0.2.3",
+  "description": "amazon sqs simple manager library",
+  "main":"queuemanager.js",
   "scripts": {
     "test": "mocha"
   },
@@ -14,5 +15,9 @@
   "devDependencies": {
     "mocha": "^1.18.2",
     "sinon": "^1.9.1"
+  },
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/radamus/queuemanager"
   }
 }
