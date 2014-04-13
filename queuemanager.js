@@ -52,15 +52,17 @@ SQS.prototype.receiveMessage = function(callback){
 var onMessageRecievied = function(sqsObj, callback) {
   return function(err, data){
     if(err) { callback(err); return;}
-      for(var i = 0; i < data.Messages.length; i++){        
-        sqsObj.sqs.deleteMessage({
-                "QueueUrl" : sqsObj.QueueUrl,
-                "ReceiptHandle" :data.Messages[i].ReceiptHandle
-              }, function(err){
-                if(err) { callback(err); return;}      
-                callback(null, data.Messages);                    
-              });   
-      }          
+      if(data.Messages){
+        for(var i = 0; i < data.Messages.length; i++){        
+          sqsObj.sqs.deleteMessage({
+                  "QueueUrl" : sqsObj.QueueUrl,
+                  "ReceiptHandle" :data.Messages[i].ReceiptHandle
+                }, function(err){
+                  if(err) { callback(err); return;}      
+                  callback(null, data.Messages);                    
+                });   
+        }
+      }else {callback("no messages in queue"); }          
   }
 }
 
