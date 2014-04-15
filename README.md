@@ -20,5 +20,5 @@ var Queue = require	("../queuemanager");
 var queue = new Queue(awsqueue, queueURL);
 
 methods:
-- queue.sendMessage("messagebody", callback); - put single message into the queue 
--	queue.receiveMessage(callback); - receive single message from the queue and delete it
+- queue.sendMessage("messagebody", callback); - puts single message into the queue 
+-	queue.receiveMessage(callback); - receives single message from the queue and deletes it
