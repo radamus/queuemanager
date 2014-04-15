@@ -5,6 +5,7 @@ Simple wrapper for sending and receiving messages from the queue.
 Curently supports only Amazon SQS putMessage and receiveMessage.
 
 Usage:
+
 console:
 > npm install queuemanager
 
